@@ -14,7 +14,8 @@ module "first_role" {
   source = "../.."
 
   assume_iam_role_policies = [var.list_bucket_policy]
-  naming_prefix            = "${var.naming_prefix}_first"
+  logical_product_family   = var.logical_product_family
+  logical_product_service  = "${var.logical_product_service}_first"
   trusted_role_arns        = var.trusted_role_arns
   trusted_role_services    = var.trusted_role_services
 
@@ -35,7 +36,8 @@ module "second_role" {
   source = "../.."
 
   assume_iam_role_policies = [var.get_bucket_location_policy]
-  naming_prefix            = "${var.naming_prefix}_second"
+  logical_product_family   = var.logical_product_family
+  logical_product_service  = "${var.logical_product_service}_second"
   trusted_role_arns        = var.trusted_role_arns
   trusted_role_services    = var.trusted_role_services
 

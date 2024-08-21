@@ -10,8 +10,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-data "aws_caller_identity" "current" {}
-
 module "iam_assumable_role" {
   source = "../.."
 

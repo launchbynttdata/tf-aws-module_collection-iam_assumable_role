@@ -17,5 +17,5 @@ output "assumable_iam_role" {
 
 output "policy_arns" {
   description = "ARNs of the attached IAM policies"
-  value       = module.iam_policies.*.arn
+  value       = module.iam_policies[*].arn
 }

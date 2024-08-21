@@ -16,11 +16,6 @@ variable "assume_iam_role_policy" {
   default     = ""
 }
 
-variable "role_sts_externalid" {
-  description = "STS ExternalId condition values to use with this role."
-  type        = list(string)
-  default     = []
-}
 variable "trusted_role_arns" {
   description = "ARNs of AWS entities who can assume this role."
   type        = list(string)
@@ -33,45 +28,6 @@ variable "trusted_role_services" {
 }
 
 ### TF Module Resource variables
-variable "naming_prefix" {
-  description = "Prefix for the provisioned resources."
-  type        = string
-  default     = "platform"
-}
-
-variable "logical_product_family" {
-  description = "Logical product family that the resource belongs to."
-  type        = string
-  default     = "platform"
-}
-
-variable "logical_product_service" {
-  description = "Logical product service that the resource belongs to."
-  type        = string
-  default     = "service"
-}
-
-variable "environment" {
-  description = "Environment in which the resource should be provisioned like dev, qa, prod etc."
-  type        = string
-  default     = "dev"
-}
-
-variable "environment_number" {
-  description = "The environment count for the respective environment. Defaults to 000. Increments in value of 1"
-  default     = "000"
-}
-
-variable "region" {
-  description = "AWS Region in which the infra needs to be provisioned"
-  default     = "us-east-2"
-}
-
-variable "resource_number" {
-  description = "The resource count for the respective resource. Defaults to 000. Increments in value of 1"
-  default     = "000"
-}
-
 variable "resource_names_map" {
   description = "A map of key to resource_name that will be used by tf-aws-module_collection-iam_assumable_role module to generate resource names"
   type = map(object(
