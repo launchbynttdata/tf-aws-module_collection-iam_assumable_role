@@ -1,8 +1,3 @@
-module github.com/nexient-llc/tf-aws-wrapper_module-iam_assumable_role
+module github.com/launchbynttdata/tf-aws-module_collection-iam_assumable_role
 
 go 1.20
-
-require (
-	github.com/gruntwork-io/terratest v0.40.8
-	github.com/stretchr/testify v1.7.0
-)

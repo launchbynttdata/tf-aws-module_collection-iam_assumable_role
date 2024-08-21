@@ -11,7 +11,7 @@
 // limitations under the License.
 
 module "iam_policies" {
-  source = "git::https://github.com/nexient-llc/tf-aws-wrapper_module-iam_policy.git?ref=0.1.0"
+  source = "git::https://github.com/launchbynttdata/tf-aws-module_collection-iam_policy.git?ref=1.0.0"
 
   count = length(var.assume_iam_role_policies)
 
@@ -51,15 +51,16 @@ module "iam_role" {
 }
 
 module "resource_names" {
-  source = "git::https://github.com/nexient-llc/tf-module-resource_name.git?ref=0.1.0"
+  source = "git::https://github.com/launchbynttdata/tf-launch-module_library-resource_name.git?ref=1.0.0"
 
   for_each = var.resource_names_map
 
-  logical_product_name = var.naming_prefix
-  region               = join("", split("-", var.region))
-  class_env            = var.environment
-  cloud_resource_type  = each.value.name
-  instance_env         = var.environment_number
-  instance_resource    = var.resource_number
-  maximum_length       = each.value.max_length
+  logical_product_family  = var.logical_product_family
+  logical_product_service = var.logical_product_service
+  region                  = join("", split("-", var.region))
+  class_env               = var.environment
+  cloud_resource_type     = each.value.name
+  instance_env            = var.environment_number
+  instance_resource       = var.resource_number
+  maximum_length          = each.value.max_length
 }

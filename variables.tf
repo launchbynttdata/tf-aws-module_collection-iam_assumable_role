@@ -17,6 +17,18 @@ variable "naming_prefix" {
   default     = "platform"
 }
 
+variable "logical_product_family" {
+  description = "Logical product family that the resource belongs to."
+  type        = string
+  default     = "platform"
+}
+
+variable "logical_product_service" {
+  description = "Logical product service that the resource belongs to."
+  type        = string
+  default     = "service"
+}
+
 variable "environment" {
   description = "Environment in which the resource should be provisioned like dev, qa, prod etc."
   type        = string
@@ -39,7 +51,7 @@ variable "resource_number" {
 }
 
 variable "resource_names_map" {
-  description = "A map of key to resource_name that will be used by tf-aws-wrapper_module-iam_assumable_role module to generate resource names"
+  description = "A map of key to resource_name that will be used by tf-aws-module_collection-iam_assumable_role module to generate resource names"
   type = map(object(
     {
       name       = string

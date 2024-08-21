@@ -4,13 +4,15 @@ components/
 .semverbot.toml
 .tflint.hcl
 .golangci.yaml
-**/.DS_Store
 
 .idea
 !examples/*.tfvars
 
 # We don't want to commit the test run lock files
 .terraform.lock.hcl
+
+# Don't include the .test-data directory created by Terratest's test-structure module
+**/.test-data/*
 
 # Local .terraform directories
 **/.terraform/*
@@ -21,9 +23,6 @@ components/
 # .tfstate files
 *.tfstate
 *.tfstate.*
-
-# auto tfvars
-*.auto.tfvars
 
 # Crash log files
 crash.log
@@ -61,3 +60,6 @@ azure_env.sh
 
 # Pre-commit hook
 .pre-commit-config.yaml
+
+# VS Code
+.vscode/
