@@ -21,10 +21,10 @@ module "first_role" {
 
   resource_names_map = {
     iam_role = {
-      name = "first-role"
+      name = "firstrole"
     }
     iam_policy = {
-      name = "first-plcy"
+      name = "firstplcy"
     }
   }
 
@@ -43,10 +43,10 @@ module "second_role" {
 
   resource_names_map = {
     iam_role = {
-      name = "second-role"
+      name = "secondrole"
     }
     iam_policy = {
-      name = "second-plcy"
+      name = "secondplcy"
     }
   }
 

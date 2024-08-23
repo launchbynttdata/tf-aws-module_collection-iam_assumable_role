@@ -28,7 +28,7 @@ module "iam_policies" {
 
   resource_names_map = {
     iam_policy = {
-      name = "${var.resource_names_map["iam_policy"].name}_${count.index}"
+      name = "${var.resource_names_map["iam_policy"].name}${count.index}"
     }
   }
 
