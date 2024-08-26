@@ -15,8 +15,8 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_iam_policies"></a> [iam\_policies](#module\_iam\_policies) | terraform.registry.launch.nttdata.com/module_collection/iam_policy/aws | ~>1.0 |
-| <a name="module_iam_role"></a> [iam\_role](#module\_iam\_role) | terraform-aws-modules/iam/aws//modules/iam-assumable-role | ~> 5.22.0 |
-| <a name="module_resource_names"></a> [resource\_names](#module\_resource\_names) | git::https://github.com/launchbynttdata/tf-launch-module_library-resource_name.git | 1.0.0 |
+| <a name="module_iam_role"></a> [iam\_role](#module\_iam\_role) | terraform-aws-modules/iam/aws//modules/iam-assumable-role | ~> 5.44 |
+| <a name="module_resource_names"></a> [resource\_names](#module\_resource\_names) | terraform.registry.launch.nttdata.com/module_library/resource_name/launch | ~> 1.0 |
 
 ## Resources
 
@@ -45,5 +45,6 @@ No resources.
 | Name | Description |
 |------|-------------|
 | <a name="output_assumable_iam_role"></a> [assumable\_iam\_role](#output\_assumable\_iam\_role) | Cross-account assumable IAM Role ARN |
+| <a name="output_assumable_iam_role_name"></a> [assumable\_iam\_role\_name](#output\_assumable\_iam\_role\_name) | Cross-account assumable IAM Role name |
 | <a name="output_policy_arns"></a> [policy\_arns](#output\_policy\_arns) | ARNs of the attached IAM policies |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

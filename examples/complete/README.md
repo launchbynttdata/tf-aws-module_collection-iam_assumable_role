@@ -39,4 +39,6 @@ No resources.
 | Name | Description |
 |------|-------------|
 | <a name="output_assumable_iam_role"></a> [assumable\_iam\_role](#output\_assumable\_iam\_role) | Crossaccount assumable IAM Role ARN |
+| <a name="output_assumable_iam_role_name"></a> [assumable\_iam\_role\_name](#output\_assumable\_iam\_role\_name) | Crossaccount assumable IAM Role name |
+| <a name="output_policy_arns"></a> [policy\_arns](#output\_policy\_arns) | ARNs of the attached IAM policies |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

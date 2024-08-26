@@ -42,5 +42,9 @@ No resources.
 | Name | Description |
 |------|-------------|
 | <a name="output_first_role_arn"></a> [first\_role\_arn](#output\_first\_role\_arn) | Crossaccount assumable IAM Role ARN |
+| <a name="output_first_role_name"></a> [first\_role\_name](#output\_first\_role\_name) | Crossaccount assumable IAM Role name |
+| <a name="output_first_role_policy_arns"></a> [first\_role\_policy\_arns](#output\_first\_role\_policy\_arns) | ARNs of the attached IAM policies |
 | <a name="output_second_role_arn"></a> [second\_role\_arn](#output\_second\_role\_arn) | Crossaccount assumable IAM Role ARN |
+| <a name="output_second_role_name"></a> [second\_role\_name](#output\_second\_role\_name) | Crossaccount assumable IAM Role name |
+| <a name="output_second_role_policy_arns"></a> [second\_role\_policy\_arns](#output\_second\_role\_policy\_arns) | ARNs of the attached IAM policies |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

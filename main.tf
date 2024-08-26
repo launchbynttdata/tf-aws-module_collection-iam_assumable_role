@@ -37,7 +37,7 @@ module "iam_policies" {
 
 module "iam_role" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
-  version = "~> 5.22.0"
+  version = "~> 5.44"
 
   create_role            = true
   role_name              = module.resource_names["iam_role"].standard
@@ -53,7 +53,8 @@ module "iam_role" {
 }
 
 module "resource_names" {
-  source = "git::https://github.com/launchbynttdata/tf-launch-module_library-resource_name.git?ref=1.0.0"
+  source  = "terraform.registry.launch.nttdata.com/module_library/resource_name/launch"
+  version = "~> 1.0"
 
   for_each = var.resource_names_map
 
