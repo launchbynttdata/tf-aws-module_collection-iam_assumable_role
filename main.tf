@@ -11,22 +11,24 @@
 // limitations under the License.
 
 module "iam_policies" {
-  source = "git::https://github.com/launchbynttdata/tf-aws-module_collection-iam_policy.git?ref=1.0.0"
+  source  = "terraform.registry.launch.nttdata.com/module_collection/iam_policy/aws"
+  version = "~>1.0"
 
   count = length(var.assume_iam_role_policies)
 
   policy    = var.assume_iam_role_policies[count.index]
   role_name = module.resource_names["iam_role"].standard
 
-  naming_prefix      = var.naming_prefix
-  environment        = var.environment
-  environment_number = var.environment_number
-  region             = var.region
-  resource_number    = var.resource_number
+  logical_product_family  = var.logical_product_family
+  logical_product_service = var.logical_product_service
+  environment             = var.environment
+  environment_number      = var.environment_number
+  region                  = var.region
+  resource_number         = var.resource_number
 
   resource_names_map = {
     iam_policy = {
-      name = "${var.resource_names_map["iam_policy"].name}_${count.index}"
+      name = "${var.resource_names_map["iam_policy"].name}${count.index}"
     }
   }
 
@@ -35,7 +37,7 @@ module "iam_policies" {
 
 module "iam_role" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
-  version = "~> 5.22.0"
+  version = "~> 5.44"
 
   create_role            = true
   role_name              = module.resource_names["iam_role"].standard
@@ -45,13 +47,14 @@ module "iam_role" {
   trusted_role_arns       = var.trusted_role_arns
   trusted_role_services   = var.trusted_role_services
   role_sts_externalid     = var.role_sts_externalid
-  custom_role_policy_arns = module.iam_policies.*.arn
+  custom_role_policy_arns = module.iam_policies[*].arn
 
   tags = merge(local.tags, { resource_name = module.resource_names["iam_role"].standard })
 }
 
 module "resource_names" {
-  source = "git::https://github.com/launchbynttdata/tf-launch-module_library-resource_name.git?ref=1.0.0"
+  source  = "terraform.registry.launch.nttdata.com/module_library/resource_name/launch"
+  version = "~> 1.0"
 
   for_each = var.resource_names_map
 

@@ -15,7 +15,12 @@ output "assumable_iam_role" {
   value       = module.iam_role.iam_role_arn
 }
 
+output "assumable_iam_role_name" {
+  description = "Cross-account assumable IAM Role name"
+  value       = module.iam_role.iam_role_name
+}
+
 output "policy_arns" {
   description = "ARNs of the attached IAM policies"
-  value       = module.iam_policies.*.arn
+  value       = module.iam_policies[*].arn
 }
