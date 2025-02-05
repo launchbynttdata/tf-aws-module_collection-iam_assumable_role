@@ -46,6 +46,7 @@ module "iam_role" {
 
   trusted_role_arns       = var.trusted_role_arns
   trusted_role_services   = var.trusted_role_services
+  trust_policy_conditions = var.trust_policy_conditions
   role_sts_externalid     = var.role_sts_externalid
   custom_role_policy_arns = module.iam_policies[*].arn
 

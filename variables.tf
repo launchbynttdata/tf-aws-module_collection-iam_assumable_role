@@ -92,6 +92,16 @@ variable "trusted_role_services" {
   default     = []
 }
 
+variable "trust_policy_conditions" {
+  description = "Condition constraints applied to the trust policy."
+  type = list(object({
+    test     = string
+    variable = string
+    values   = list(string)
+  }))
+  default = []
+}
+
 variable "allow_self_assume_role" {
   description = "Determines whether to allow the role to be assume itself."
   type        = bool
